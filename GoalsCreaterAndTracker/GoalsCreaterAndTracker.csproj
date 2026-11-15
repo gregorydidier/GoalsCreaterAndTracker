@@ -9,8 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Features\AddGoal\" />
-    <Folder Include="Features\GoalView\" />
     <Folder Include="Features\EditGoal\" />
   </ItemGroup>
 

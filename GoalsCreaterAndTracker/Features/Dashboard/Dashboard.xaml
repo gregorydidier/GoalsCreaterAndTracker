@@ -19,7 +19,14 @@
         </Grid.ColumnDefinitions>
 
         <!--Nav pane-->
-        <Rectangle Grid.Column="0" Fill="{StaticResource PrimaryColor}" Grid.RowSpan="2" />
+        <Rectangle Grid.Column="0" Fill="{StaticResource PrimaryColor}" Grid.RowSpan="2"/>
+        <StackPanel Grid.Column="0" Grid.RowSpan="2" VerticalAlignment="Center">
+            <Button Width="40" Height="40" Content="Dashboard"/>
+            <Button Width="40" Height="40" Content="Goals"/>
+            <Button Width="40" Height="40" Content="Tasks"/>
+            <Button Width="40" Height="40" Content="Settings"/>
+        </StackPanel>
+
 
         <!--Goal List Background-->
         <Rectangle Grid.Column="1" Fill="{StaticResource BackgroundColor}" Grid.RowSpan="2" />
@@ -100,7 +107,15 @@
                 <Button Grid.Column="2" Content="Delete Goal" Style="{StaticResource AddGoalButton}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
             </Grid>
         </Grid>
-        <!--Task Status Bar-->
+        <!--Goal Status Bar-->
         <Rectangle Grid.Column="3" Fill="{StaticResource AccentColor}" Grid.RowSpan="2" />
+
+        <Grid Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="230" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="140" />
+            </Grid.RowDefinitions>
+        </Grid>
     </Grid>
 </Window>
