@@ -9,6 +9,5 @@
     <Grid>
         <TextBox x:Name="GoalNameTextBox" Width="200" Height="30" Margin="10"/>
         <TextBox x:Name="GoalDescriptionTextBox" Width="200" Height="100" Margin="10,50,0,0" TextWrapping="Wrap"/>
-        <Button Content="Add Goal" Width="100" Height="30" Margin="10,50,0,0" Click="AddGoalButton_Click"/>
     </Grid>
 </Window>

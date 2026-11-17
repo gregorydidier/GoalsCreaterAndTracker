@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GoalsCreaterAndTracker.Features.Dashboard;
+using GoalsCreaterAndTracker.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -13,12 +15,9 @@ using System.Windows.Shapes;
 
 namespace GoalsCreaterAndTracker.Features.GoalView
 {
-    /// <summary>
-    /// Interaction logic for GoalView.xaml
-    /// </summary>
-    public partial class GoalView : UserControl
+    public partial class GoalSummaryView : UserControl
     {
-        public GoalView()
+        public GoalSummaryView()
         {
             InitializeComponent();
         }

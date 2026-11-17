@@ -1,6 +1,6 @@
-build/
-dist/
-out/
-bin/
-obj/
-.vs/
+build
+dist
+out
+bin
+obj
+.vs

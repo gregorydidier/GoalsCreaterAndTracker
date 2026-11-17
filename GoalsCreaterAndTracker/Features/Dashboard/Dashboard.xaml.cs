@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using GoalsCreaterAndTracker.Features.Dashboard;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -12,18 +13,14 @@ using System.Windows.Shapes;
 namespace GoalsCreaterAndTracker
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Dashboard.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Dashboard : Window
     {
-        public MainWindow()
+        public Dashboard()
         {
             InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
+            DataContext = new DashboardViewModel();
         }
     }
 }
