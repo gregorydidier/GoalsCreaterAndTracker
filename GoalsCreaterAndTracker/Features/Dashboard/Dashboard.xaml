@@ -51,7 +51,14 @@
             <Button Grid.Row="1" Content="Search" HorizontalAlignment="Right" VerticalAlignment="Center" Width="50" Height="50" Style="{StaticResource AddGoalButton}" />
 
             <!--List View For Goal Items-->
-            <ListView Grid.Row="2" Background="Transparent" Margin="0 20"/>
+            <ListView Grid.Row="2" Background="Transparent" Margin="0 20" ItemsSource="{Binding ChildViewModels}"
+                        SelectedItem="{Binding SelectedChild}">
+                <ListView.ItemTemplate>
+                    <DataTemplate DataType="{x:Type vm:ChildViewModel}">
+                        <views:ItemView />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Grid>
 
         <!--Goal Details-->
