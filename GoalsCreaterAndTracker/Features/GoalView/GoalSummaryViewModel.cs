@@ -8,6 +8,8 @@ namespace GoalsCreaterAndTracker.Features.GoalView
 {
     public partial class GoalSummaryViewModel : ObservableObject
     {
+        public int Id { get; set; }
+
         [ObservableProperty]
         private string _title = string.Empty;
 
@@ -28,6 +30,7 @@ namespace GoalsCreaterAndTracker.Features.GoalView
 
         public GoalSummaryViewModel(Goal goal)
         {
+            Id = goal.Id;
             _title = goal.Title;
             _description = goal.Description;
             _progress = goal.State;

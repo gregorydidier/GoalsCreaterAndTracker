@@ -7,7 +7,7 @@ using System.Text;
 
 namespace GoalsCreaterAndTracker.Features.GoalView
 {
-    internal partial class GoalDetailedViewModel: ObservableObject
+    public partial class GoalDetailedViewModel: ObservableObject
     {
         [ObservableProperty]
         private string _title = string.Empty;
@@ -29,5 +29,16 @@ namespace GoalsCreaterAndTracker.Features.GoalView
 
         [ObservableProperty]
         private ObservableCollection<Step> _steps = new ObservableCollection<Step>();
+
+        public GoalDetailedViewModel(Goal goal)
+        {
+            _title = goal.Title;
+            _description = goal.Description;
+            _progress = goal.State;
+            _priority = goal.Priority;
+            _category = goal.Category;
+            _dueDate = goal.DueDate;
+            _steps = new ObservableCollection<Step>(goal.Steps);
+        }
     }
 }

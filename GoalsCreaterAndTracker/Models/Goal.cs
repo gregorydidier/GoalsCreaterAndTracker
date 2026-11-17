@@ -6,7 +6,7 @@ namespace GoalsCreaterAndTracker.Models
 {
     public class Goal
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public DateTime DueDate { get; set; }
@@ -16,6 +16,7 @@ namespace GoalsCreaterAndTracker.Models
         public GoalState State { get; set; }
         public GoalPriority Priority { get; set; }
         public GoalCategory Category { get; set; }
+        public IEnumerable<Step> Steps { get; internal set; }
     }
 
     public enum GoalState
