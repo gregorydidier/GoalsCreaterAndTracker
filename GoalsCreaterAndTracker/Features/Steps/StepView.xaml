@@ -12,7 +12,10 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <!--Radio button for is completed -->
-        <RadioButton Grid.Column="0" VerticalAlignment="Center" />
+        <CheckBox Grid.Column="0" 
+             VerticalAlignment="Center" 
+             IsChecked="{Binding IsCompleted, Mode=TwoWay}"
+             Command="{Binding ChangeCompletionCommand}" />
         <!--Step Description-->
         <TextBlock Grid.Column="1" Text="{Binding Description}" VerticalAlignment="Center" />
     </Grid>

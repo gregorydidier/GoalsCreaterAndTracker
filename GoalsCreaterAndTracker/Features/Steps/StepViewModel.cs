@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using GoalsCreaterAndTracker.Models;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,12 @@ namespace GoalsCreaterAndTracker.Features.Steps
         {
             _description = step.Description;
             _isCompleted = step.IsCompleted;
+        }
+
+        [RelayCommand]
+        private void ChangeCompletion()
+        {
+            // Bubble up the change value to the goals arrya and update database
         }
 
     }

@@ -15,9 +15,9 @@ namespace GoalsCreaterAndTracker.Features.AddGoal
     /// <summary>
     /// Interaction logic for NewGoalView.xaml
     /// </summary>
-    public partial class NewGoalWindow : Window
+    public partial class NewGoalView
     {
-        public NewGoalWindow()
+        public NewGoalView()
         {
             InitializeComponent();
         }

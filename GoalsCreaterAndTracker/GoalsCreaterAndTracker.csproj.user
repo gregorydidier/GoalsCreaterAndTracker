@@ -2,13 +2,16 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="Features\AddGoal\NewGoalWindow.xaml.cs">
+    <Compile Update="Features\AddGoal\NewGoalView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Features\GoalView\GoalDetailedView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Features\GoalView\GoalSummaryView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Features\MainWindow\MainWindowView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Features\Steps\StepView.xaml.cs">

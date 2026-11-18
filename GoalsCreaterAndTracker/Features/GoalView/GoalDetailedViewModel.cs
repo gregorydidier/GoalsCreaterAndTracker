@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using GoalsCreaterAndTracker.Features.Steps;
 using GoalsCreaterAndTracker.Models;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace GoalsCreaterAndTracker.Features.GoalView
         private DateTime _dueDate = DateTime.Today;
 
         [ObservableProperty]
-        private ObservableCollection<Step> _steps = new ObservableCollection<Step>();
+        private ObservableCollection<StepViewModel> _steps = new ObservableCollection<StepViewModel>();
 
         public GoalDetailedViewModel(Goal goal)
         {
@@ -38,7 +39,7 @@ namespace GoalsCreaterAndTracker.Features.GoalView
             _priority = goal.Priority;
             _category = goal.Category;
             _dueDate = goal.DueDate;
-            _steps = new ObservableCollection<Step>(goal.Steps);
+            _steps = new ObservableCollection<StepViewModel>(goal.Steps.Select(s => new StepViewModel(s)));
         }
     }
 }

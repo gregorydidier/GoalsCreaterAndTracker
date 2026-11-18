@@ -1,23 +1,26 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using GoalsCreaterAndTracker.Core;
 using GoalsCreaterAndTracker.Features.AddGoal;
 using GoalsCreaterAndTracker.Features.GoalView;
+using GoalsCreaterAndTracker.Features.MainWindow;
 using GoalsCreaterAndTracker.Models;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows;
 using System.Windows.Input;
 
 namespace GoalsCreaterAndTracker.Features.Dashboard
 {
     public partial class DashboardViewModel : ObservableObject, INotifyPropertyChanged
     {
-        public ICommand IOpenNewWindow => new RelayCommand(OpenNewWindow);
         public ObservableCollection<GoalSummaryViewModel> GoalSummaries { get; } = new();
         private List<Goal> _goals = new();
         [ObservableProperty]
         private GoalSummaryViewModel? _selectedGoal;
         [ObservableProperty]
         private GoalDetailedViewModel? _selectedGoalDetails;
+        private readonly MainWindowViewModel _mainWindowViewModel;
 
         partial void OnSelectedGoalChanged(GoalSummaryViewModel? value)
         {
@@ -29,15 +32,18 @@ namespace GoalsCreaterAndTracker.Features.Dashboard
                 ? new GoalDetailedViewModel(matchedGoal)
                 : null;
         }
-        public DashboardViewModel()
+        public DashboardViewModel(MainWindowViewModel mainWindowViewModel)
         {
+            _mainWindowViewModel = mainWindowViewModel;
             LoadTestData();
         }
 
-        private void OpenNewWindow()
+
+        [RelayCommand]
+        private void OpenNewGoalWindow()
         {
-            NewGoalWindow newGoalWindow = new NewGoalWindow();
-            newGoalWindow.Show();
+            _mainWindowViewModel.NavigateToNewGoal();
+
         }
 
         private void LoadTestData()

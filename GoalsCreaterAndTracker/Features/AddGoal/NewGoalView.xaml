@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="GoalsCreaterAndTracker.Features.AddGoal.NewGoalView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GoalsCreaterAndTracker.Features.AddGoal"
+        mc:Ignorable="d"
+        Height="450" Width="800">
+    <Grid>
+        <!--Goal Title-->
+        <TextBox x:Name="GoalNameTextBox" Width="200" Height="30" Margin="300,23,300,381"/>
+        <!--Goal Description-->
+        <TextBox x:Name="GoalDescriptionTextBox" Width="200" Height="100" Margin="300,81,300,253" TextWrapping="Wrap"/>
+        <!--Goal Priority-->
+        <ComboBox x:Name="GoalPriorityComboBox" Height="30" Margin="400,202,300,202">
+            <ComboBoxItem Content="Low"/>
+            <ComboBoxItem Content="Medium"/>
+            <ComboBoxItem Content="High"/>
+        </ComboBox>
+        <!--End Date-->
+        <DatePicker x:Name="GoalEndDatePicker" Height="30" Margin="300,202,407,202" RenderTransformOrigin="0.801,0.612"/>
+        <!--Goal Category-->
+        <ComboBox x:Name="GoalCategoryComboBox" Width="200" Height="30" Margin="300,247,300,157">
+            <ComboBoxItem Content="Personal"/>
+            <ComboBoxItem Content="Work"/>
+            <ComboBoxItem Content="Health"/>
+        </ComboBox>
+        <!--Add Step-->
+        <Button x:Name="AddStepButton" Width="200" Height="30" Margin="300,294,300,110" Content="Add Step"/>
+
+    </Grid>
+</UserControl>

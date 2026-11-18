@@ -10,6 +10,9 @@
 
   <ItemGroup>
     <Folder Include="Features\EditGoal\" />
+    <Folder Include="Features\CompletedGoals\" />
+    <Folder Include="Features\Metrics\" />
+    <Folder Include="Features\Settings\" />
   </ItemGroup>
 
   <ItemGroup>
