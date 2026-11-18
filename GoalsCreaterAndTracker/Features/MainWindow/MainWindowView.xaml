@@ -8,18 +8,40 @@
         xmlns:newgoal="clr-namespace:GoalsCreaterAndTracker.Features.AddGoal"
         mc:Ignorable="d"
         Title="Goals" Height="870" Width="1290">
+
     <Window.Resources>
-        <!-- Automatically renders DashboardView when CurrentViewModel is DashboardViewModel -->
         <DataTemplate DataType="{x:Type dashboard:DashboardViewModel}">
             <dashboard:DashboardView />
         </DataTemplate>
 
-        <!-- Automatically renders NewGoalView when CurrentViewModel is NewGoalViewModel -->
         <DataTemplate DataType="{x:Type newgoal:NewGoalViewModel}">
             <newgoal:NewGoalView />
         </DataTemplate>
     </Window.Resources>
 
-        <!-- This acts like the browser viewport and swaps views automatically -->
-    <ContentControl Content="{Binding CurrentViewModel}" />
+    <!-- Single root container for the Window -->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <!-- Column 0: Fixed-width navigation sidebar -->
+            <ColumnDefinition Width="80" />
+            <!-- Column 1: Main content area that fills the rest of the window -->
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Persistent Navigation Sidebar (Column 0) -->
+        <Rectangle Grid.Column="0" Fill="{StaticResource PrimaryColor}" />
+        <StackPanel Grid.Column="0" VerticalAlignment="Center">
+            <Button Width="40" Height="40" Content="Dashboard" 
+                    Command="{Binding NavigateToDashboardCommand}" />
+            <Button Width="40" Height="40" Content="Completed Goals" 
+                    Command="{Binding NavigateToCompletedGoalsCommand}" />
+            <Button Width="40" Height="40" Content="Metrics" 
+                    Command="{Binding NavigateToMetricsCommand}" />
+            <Button Width="40" Height="40" Content="Settings" 
+                    Command="{Binding NavigateToSettingsCommand}" />
+        </StackPanel>
+
+        <!-- Swappable Page Area (Column 1) -->
+        <ContentControl Grid.Column="1" Content="{Binding CurrentViewModel}" />
+    </Grid>
 </Window>
