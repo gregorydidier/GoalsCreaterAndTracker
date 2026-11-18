@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GoalsCreaterAndTracker.Features.GoalView"
+             xmlns:steps="clr-namespace:GoalsCreaterAndTracker.Features.Steps"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <!--Goal Details-->
@@ -40,10 +41,17 @@
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Text="Tasks Check List" IsHitTestVisible="False"/>
-            <StackPanel Margin="20">
-                <!-- Goal Details Checklist -->
-                <ListView Margin="0 20" Background="Transparent"/>
-            </StackPanel>
+            <ListView Grid.Row="2" 
+                Background="Transparent" 
+                Margin="0,20" 
+                HorizontalContentAlignment="Stretch"
+                ItemsSource="{Binding Steps}">
+                <ListView.ItemTemplate>
+                    <DataTemplate DataType="{x:Type steps:StepViewModel}">
+                        <steps:StepView />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Grid>
 
         <!--Goal View Buttons-->

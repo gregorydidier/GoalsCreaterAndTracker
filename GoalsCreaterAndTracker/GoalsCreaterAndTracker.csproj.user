@@ -11,5 +11,8 @@
     <Compile Update="Features\GoalView\GoalSummaryView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Features\Steps\StepView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
